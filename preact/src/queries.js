@@ -1,4 +1,4 @@
-import gql from "@grafoo/tag";
+import gql from "@grafoo/core/tag";
 
 export const allPosts = gql`
   query getPosts($orderBy: PostOrderBy) {

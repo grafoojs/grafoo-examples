@@ -1,6 +1,6 @@
 import graphql from "@grafoo/core/tag";
 
-export const allPosts = graphql`
+export const ALL_POSTS = graphql`
   query getPosts($orderBy: PostOrderBy) {
     allPosts(orderBy: $orderBy) {
       title
@@ -11,7 +11,7 @@ export const allPosts = graphql`
   }
 `;
 
-export const createPost = graphql`
+export const CREATE_POST = graphql`
   mutation createPost($content: String, $title: String, $authorId: ID) {
     createPost(content: $content, title: $title, authorId: $authorId) {
       title
@@ -22,7 +22,7 @@ export const createPost = graphql`
   }
 `;
 
-export const updatePost = graphql`
+export const UPDATE_POST = graphql`
   mutation updatePost($id: ID!, $title: String, $content: String) {
     updatePost(id: $id, title: $title, content: $content) {
       title
@@ -33,7 +33,7 @@ export const updatePost = graphql`
   }
 `;
 
-export const deletePost = graphql`
+export const DELETE_POST = graphql`
   mutation deletePost($id: ID!) {
     deletePost(id: $id) {
       id

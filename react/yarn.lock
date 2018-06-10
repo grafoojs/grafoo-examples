@@ -646,7 +646,7 @@
     "@grafoo/types" "^0.0.1-alpha.5"
     grafoo-bundle "^0.0.1-alpha.5"
 
-"@grafoo/types@^0.0.1-alpha.3", "@grafoo/types@^0.0.1-alpha.5":
+"@grafoo/types@^0.0.1-alpha.5":
   version "0.0.1-alpha.5"
   resolved "https://registry.yarnpkg.com/@grafoo/types/-/types-0.0.1-alpha.5.tgz#01cddd03e627f35806578afd87a3aa8c313f1664"
 

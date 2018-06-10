@@ -1,12 +1,12 @@
 import React from "react";
 import { Consumer } from "@grafoo/react";
 
-import { allPosts, createPost, deletePost, updatePost } from "./queries";
-import Posts from "./posts";
+import { ALL_POSTS, CREATE_POST, DELETE_POST, UPDATE_POST } from "./queries";
+import Posts from "./Posts";
 
 const mutations = {
   createPost: {
-    query: createPost,
+    query: CREATE_POST,
     optimisticUpdate: ({ allPosts }, variables) => ({
       allPosts: [{ ...variables, id: "tempID" }, ...allPosts]
     }),
@@ -15,7 +15,7 @@ const mutations = {
     })
   },
   updatePost: {
-    query: updatePost,
+    query: UPDATE_POST,
     optimisticUpdate: ({ allPosts }, variables) => ({
       allPosts: allPosts.map(p => (p.id === variables.id ? variables : p))
     }),
@@ -24,7 +24,7 @@ const mutations = {
     })
   },
   deletePost: {
-    query: deletePost,
+    query: DELETE_POST,
     optimisticUpdate: ({ allPosts }, { id }) => ({
       allPosts: allPosts.filter(_ => _.id !== id)
     }),
@@ -36,7 +36,7 @@ const mutations = {
 
 export default function PostsContainer() {
   return (
-    <Consumer query={allPosts} variables={{ orderBy: "createdAt_DESC" }} mutations={mutations}>
+    <Consumer query={ALL_POSTS} variables={{ orderBy: "createdAt_DESC" }} mutations={mutations}>
       {props => <Posts {...props} />}
     </Consumer>
   );

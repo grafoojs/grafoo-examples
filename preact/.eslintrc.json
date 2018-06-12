@@ -1,6 +1,10 @@
 {
   "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "plugins": ["react"],
+  "plugins": ["import", "react"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "settings": {
     "react": {
       "pragma": "h"
@@ -8,6 +12,7 @@
   },
   "parserOptions": {
     "ecmaVersion": 2017,
+    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true,
       "experimentalObjectRestSpread": true

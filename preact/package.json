@@ -7,7 +7,7 @@
     "@babel/plugin-proposal-class-properties": "^7.0.0-beta.51",
     "@babel/preset-env": "^7.0.0-beta.51",
     "@babel/preset-react": "^7.0.0-beta.51",
-    "@grafoo/babel-plugin": "^0.0.1-alpha.7",
+    "@grafoo/babel-plugin": "^0.0.1-alpha.8",
     "babel-loader": "^8.0.0-beta",
     "babel-plugin-emotion": "^9.1.0",
     "eslint": "^4.19.1",
@@ -18,8 +18,8 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
-    "@grafoo/core": "^0.0.1-alpha.7",
-    "@grafoo/preact": "^0.0.1-alpha.7",
+    "@grafoo/core": "^0.0.1-alpha.8",
+    "@grafoo/preact": "^0.0.1-alpha.8",
     "emotion": "^9.1.0",
     "preact": "^8.2.7",
     "preact-emotion": "^9.1.0"

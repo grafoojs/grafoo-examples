@@ -50,12 +50,10 @@ const mutations: GrafooMutations<AllPosts, Mutations> = {
   }
 };
 
+const variables = { orderBy: "createdAt_DESC" };
+
 const PostsContainer: React.SFC = () => (
-  <Consumer<AllPosts, Mutations>
-    query={ALL_POSTS}
-    variables={{ orderBy: "createdAt_DESC" }}
-    mutations={mutations}
-  >
+  <Consumer<AllPosts, Mutations> query={ALL_POSTS} variables={variables} mutations={mutations}>
     {props => <Posts {...props} />}
   </Consumer>
 );

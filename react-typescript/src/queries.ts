@@ -44,7 +44,6 @@ export interface DeletePost {
 export const ALL_POSTS = gql`
   query AllPosts($orderBy: PostOrderBy) {
     allPosts(orderBy: $orderBy) {
-      id
       title
       content
       createdAt
@@ -56,7 +55,6 @@ export const ALL_POSTS = gql`
 export const CREATE_POST = gql`
   mutation CreatePost($content: String, $title: String, $authorId: ID) {
     createPost(content: $content, title: $title, authorId: $authorId) {
-      id
       title
       content
       createdAt
@@ -68,7 +66,6 @@ export const CREATE_POST = gql`
 export const UPDATE_POST = gql`
   mutation UpdatePost($id: ID!, $title: String, $content: String) {
     updatePost(id: $id, title: $title, content: $content) {
-      id
       title
       content
       createdAt

@@ -1,18 +1,16 @@
 import * as React from "react";
 import { Provider } from "@grafoo/react";
-import PostsContainer from "./Posts";
+import Posts from "./Posts";
 import { ClientInstance } from "@grafoo/types";
 
 interface Props {
   client: ClientInstance;
 }
 
-const App: React.SFC<Props> = ({ client }) => {
-  return (
-    <Provider client={client}>
-      <PostsContainer />
-    </Provider>
-  );
-};
+const App: React.SFC<Props> = ({ client }) => (
+  <Provider client={client}>
+    <Posts />
+  </Provider>
+);
 
 export default App;

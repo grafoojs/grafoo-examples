@@ -38,13 +38,11 @@ export default class Posts extends Component {
 
   handleChange = value => event => this.setState({ [value]: event.target.value });
 
-  submit = event => {
+  submit = (mutate = event => {
     event.preventDefault();
 
-    const submit = this.props[this.state.id ? "updatePost" : "createPost"];
-
-    submit(this.state).then(() => this.setState({ title: "", content: "", id: null }));
-  };
+    mutate(this.state).then(() => this.setState({ title: "", content: "", id: null }));
+  });
 
   render({}, state) {
     return (
@@ -53,7 +51,7 @@ export default class Posts extends Component {
           <div>
             <Wrapper>
               <H1>Post Form</H1>
-              <Form onSubmit={this.submit}>
+              <Form onSubmit={this.submit(state.id ? props.updatePost : props.createPost)}>
                 <Input
                   placeholder="title"
                   value={state.title}

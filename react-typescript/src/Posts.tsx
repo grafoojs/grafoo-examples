@@ -67,16 +67,14 @@ export default class Posts extends React.Component<{}, State> {
     this.setState({ [value]: event.target.value } as any);
   };
 
-  submit = (event: React.FormEvent<HTMLFormElement>) => {
+  submit = mutate => (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const submit = this.props[this.state.id ? "updatePost" : "createPost"];
-
-    submit(this.state).then(() => this.setState({ title: "", content: "", id: null }));
+    mutate(this.state).then(() => this.setState({ title: "", content: "", id: null }));
   };
 
   render() {
-    const { title, content } = this.state;
+    const { title, content, id } = this.state;
 
     return (
       <Consumer query={ALL_POSTS} variables={variables} mutations={mutations}>
@@ -84,7 +82,7 @@ export default class Posts extends React.Component<{}, State> {
           <React.Fragment>
             <Wrapper>
               <H1>Post Form</H1>
-              <Form onSubmit={this.submit}>
+              <Form onSubmit={this.submit(id ? props.updatePost : props.createPost)}>
                 <Input placeholder="title" value={title} onChange={this.handleChange("title")} />
                 <Textarea
                   placeholder="content"

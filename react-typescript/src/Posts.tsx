@@ -1,12 +1,23 @@
-import { GrafooRenderProps, Variables } from "@grafoo/types";
+import { Consumer } from "@grafoo/react";
+import { GrafooMutations } from "@grafoo/types";
 import * as React from "react";
-import { AllPosts } from "./queries";
 import { Button, Form, H1, H2, Input, Item, List, PostContent, Textarea, Wrapper } from "./ui-kit";
+import {
+  AllPosts,
+  ALL_POSTS,
+  CreatePost,
+  CREATE_POST,
+  DeletePost,
+  DELETE_POST,
+  UpdatePost,
+  UPDATE_POST,
+  Post
+} from "./queries";
 
-interface Props extends GrafooRenderProps, AllPosts {
-  createPost: (vars: Variables) => Promise<void>;
-  updatePost: (vars: Variables) => Promise<void>;
-  deletePost: (vars: Variables) => Promise<void>;
+interface Mutations {
+  createPost: CreatePost;
+  updatePost: UpdatePost;
+  deletePost: DeletePost;
 }
 
 interface State {
@@ -15,7 +26,39 @@ interface State {
   id: string;
 }
 
-export default class Posts extends React.Component<Props, State> {
+const mutations: GrafooMutations<AllPosts, Mutations> = {
+  createPost: {
+    query: CREATE_POST,
+    optimisticUpdate: ({ allPosts }, variables: Post) => ({
+      allPosts: [{ ...variables, id: "tempID" }, ...allPosts]
+    }),
+    update: ({ allPosts }, { createPost: post }) => ({
+      allPosts: allPosts.map(p => (p.id === "tempID" ? post : p))
+    })
+  },
+  updatePost: {
+    query: UPDATE_POST,
+    optimisticUpdate: ({ allPosts }, variables: Post) => ({
+      allPosts: allPosts.map(p => (p.id === variables.id ? variables : p))
+    }),
+    update: ({ allPosts }, { updatePost: post }) => ({
+      allPosts: allPosts.map(p => (p.id === post.id ? post : p))
+    })
+  },
+  deletePost: {
+    query: DELETE_POST,
+    optimisticUpdate: ({ allPosts }, { id }) => ({
+      allPosts: allPosts.filter(_ => _.id !== id)
+    }),
+    update: ({ allPosts }, { deletePost: { id } }) => ({
+      allPosts: allPosts.filter(_ => _.id !== id)
+    })
+  }
+};
+
+const variables = { orderBy: "createdAt_DESC" };
+
+export default class Posts extends React.Component<{}, State> {
   state = { title: "", content: "", id: null };
 
   handleChange = (value: "title" | "content") => (
@@ -33,42 +76,45 @@ export default class Posts extends React.Component<Props, State> {
   };
 
   render() {
-    const { loaded, allPosts, deletePost } = this.props;
     const { title, content } = this.state;
 
     return (
-      <React.Fragment>
-        <Wrapper>
-          <H1>Post Form</H1>
-          <Form onSubmit={this.submit}>
-            <Input placeholder="title" value={title} onChange={this.handleChange("title")} />
-            <Textarea
-              placeholder="content"
-              value={content}
-              onChange={this.handleChange("content")}
-            />
-            <Button>submit</Button>
-          </Form>
-        </Wrapper>
-        {loaded ? (
-          <List>
-            {allPosts.map(({ id, title, content }) => (
-              <Item key={id}>
-                <Wrapper>
-                  <H2>{title}</H2>
-                  <PostContent dangerouslySetInnerHTML={{ __html: content }} />
-                  <Button onClick={() => this.setState({ id, title, content })}>
-                    update post
-                  </Button>{" "}
-                  <Button onClick={() => deletePost({ id })}>remove post</Button>
-                </Wrapper>
-              </Item>
-            ))}
-          </List>
-        ) : (
-          <Wrapper>loading...</Wrapper>
+      <Consumer query={ALL_POSTS} variables={variables} mutations={mutations}>
+        {props => (
+          <React.Fragment>
+            <Wrapper>
+              <H1>Post Form</H1>
+              <Form onSubmit={this.submit}>
+                <Input placeholder="title" value={title} onChange={this.handleChange("title")} />
+                <Textarea
+                  placeholder="content"
+                  value={content}
+                  onChange={this.handleChange("content")}
+                />
+                <Button>submit</Button>
+              </Form>
+            </Wrapper>
+            {props.loaded ? (
+              <List>
+                {props.allPosts.map(({ id, title, content }) => (
+                  <Item key={id}>
+                    <Wrapper>
+                      <H2>{title}</H2>
+                      <PostContent dangerouslySetInnerHTML={{ __html: content }} />
+                      <Button onClick={() => this.setState({ id, title, content })}>
+                        update post
+                      </Button>{" "}
+                      <Button onClick={() => props.deletePost({ id })}>remove post</Button>
+                    </Wrapper>
+                  </Item>
+                ))}
+              </List>
+            ) : (
+              <Wrapper>loading...</Wrapper>
+            )}
+          </React.Fragment>
         )}
-      </React.Fragment>
+      </Consumer>
     );
   }
 }

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Provider } from "@grafoo/react";
-import PostsContainer from "./PostsContainer";
+import PostsContainer from "./Posts";
 import { ClientInstance } from "@grafoo/types";
 
 interface Props {

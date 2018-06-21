@@ -70,14 +70,16 @@ export default class Posts extends React.Component<{}, State> {
   submit = mutate => (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    mutate(this.state).then(() => this.setState({ title: "", content: "", id: null }));
+    mutate(this.state).then(() => {
+      this.setState({ title: "", content: "", id: null });
+    });
   };
 
   render() {
     const { title, content, id } = this.state;
 
     return (
-      <Consumer query={ALL_POSTS} variables={variables} mutations={mutations}>
+      <Consumer<AllPosts, Mutations> query={ALL_POSTS} variables={variables} mutations={mutations}>
         {props => (
           <React.Fragment>
             <Wrapper>

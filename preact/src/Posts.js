@@ -1,7 +1,7 @@
 import { Consumer } from "@grafoo/preact";
 import { h, Component } from "preact";
 import { ALL_POSTS, CREATE_POST, DELETE_POST, UPDATE_POST } from "./queries";
-import { Button, Form, H1, H2, Input, Item, List, Textarea, Wrapper } from "./ui-kit";
+import { Button, Form, H1, H2, Input, Item, List, Textarea, Wrapper, PostContent } from "./ui-kit";
 
 const mutations = {
   createPost: {
@@ -38,11 +38,13 @@ export default class Posts extends Component {
 
   handleChange = value => event => this.setState({ [value]: event.target.value });
 
-  submit = (mutate = event => {
+  submit = mutate => event => {
     event.preventDefault();
 
-    mutate(this.state).then(() => this.setState({ title: "", content: "", id: null }));
-  });
+    mutate(this.state).then(() => {
+      this.setState({ title: "", content: "", id: null });
+    });
+  };
 
   render({}, state) {
     return (
@@ -71,14 +73,11 @@ export default class Posts extends Component {
                   <Item key={id}>
                     <Wrapper>
                       <H2>{title}</H2>
-                      <div
-                        dangerouslySetInnerHTML={{ __html: content }}
-                        style={{ marginBottom: 16 }}
-                      />
+                      <PostContent dangerouslySetInnerHTML={{ __html: content }} />
                       <Button onClick={() => this.setState({ id, title, content })}>
                         update post
                       </Button>{" "}
-                      <Button onClick={() => deletePost({ id })}>remove post</Button>
+                      <Button onClick={() => props.deletePost({ id })}>remove post</Button>
                     </Wrapper>
                   </Item>
                 ))}

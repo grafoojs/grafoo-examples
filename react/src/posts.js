@@ -1,7 +1,7 @@
 import { Consumer } from "@grafoo/react";
 import React from "react";
 import { ALL_POSTS, CREATE_POST, DELETE_POST, UPDATE_POST } from "./queries";
-import { Button, Form, H1, H2, Input, Item, List, Textarea, Wrapper } from "./ui-kit";
+import { Button, Form, H1, H2, Input, Item, List, Textarea, Wrapper, PostContent } from "./ui-kit";
 
 const mutations = {
   createPost: {
@@ -33,32 +33,40 @@ const mutations = {
   }
 };
 
-export default class PostsContainer extends React.Component {
+const variables = { orderBy: "createdAt_DESC" };
+
+export default class Posts extends React.Component {
   state = { title: "", content: "", id: null };
 
-  handleChange = value => event => this.setState({ [value]: event.target.value });
+  inputEl = React.createRef();
+
+  handleChange = value => event => {
+    this.setState({ [value]: event.target.value });
+  };
 
   submit = mutate => event => {
     event.preventDefault();
 
-    mutate(this.state).then(() => this.setState({ title: "", content: "", id: null }));
+    mutate(this.state).then(() => {
+      this.setState({ title: "", content: "", id: null });
+    });
   };
 
   render() {
-    const { title, content } = this.state;
+    const { title, content, id } = this.state;
 
     return (
-      <Consumer query={ALL_POSTS} variables={{ orderBy: "createdAt_DESC" }} mutations={mutations}>
+      <Consumer query={ALL_POSTS} variables={variables} mutations={mutations}>
         {props => (
           <React.Fragment>
             <Wrapper>
               <H1>Post Form</H1>
-              <Form onSubmit={this.submit(state.id ? props.updatePost : props.createPost)}>
-                <Input placeholder="title" value={title} onInput={this.handleChange("title")} />
+              <Form onSubmit={this.submit(id ? props.updatePost : props.createPost)}>
+                <Input placeholder="title" value={title} onChange={this.handleChange("title")} />
                 <Textarea
                   placeholder="content"
                   value={content}
-                  onInput={this.handleChange("content")}
+                  onChange={this.handleChange("content")}
                 />
                 <Button>submit</Button>
               </Form>
@@ -69,14 +77,11 @@ export default class PostsContainer extends React.Component {
                   <Item key={id}>
                     <Wrapper>
                       <H2>{title}</H2>
-                      <div
-                        dangerouslySetInnerHTML={{ __html: content }}
-                        style={{ marginBottom: 16 }}
-                      />
-                      <Button onClick={() => this.setState({ id, title, content })}>
+                      <PostContent dangerouslySetInnerHTML={{ __html: content }} />
+                      <Button onClick={() => this.setState({ title, content, id })}>
                         update post
                       </Button>{" "}
-                      <Button onClick={() => deletePost({ id })}>remove post</Button>
+                      <Button onClick={() => props.deletePost({ id })}>remove post</Button>
                     </Wrapper>
                   </Item>
                 ))}

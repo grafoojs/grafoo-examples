@@ -74,3 +74,7 @@ export const Item = styled.li`
     background: #efefef;
   }
 `;
+
+export const PostContent = styled.div`
+  margin-bottom: 10px;
+`;

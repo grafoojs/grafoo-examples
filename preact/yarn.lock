@@ -114,13 +114,6 @@
     "@babel/types" "7.0.0-beta.40"
     lodash "^4.2.0"
 
-"@babel/helper-module-imports@7.0.0-beta.49":
-  version "7.0.0-beta.49"
-  resolved "https://registry.yarnpkg.com/@babel/helper-module-imports/-/helper-module-imports-7.0.0-beta.49.tgz#41d7d59891016c493432a46f7464446552890c75"
-  dependencies:
-    "@babel/types" "7.0.0-beta.49"
-    lodash "^4.17.5"
-
 "@babel/helper-module-imports@7.0.0-beta.51":
   version "7.0.0-beta.51"
   resolved "https://registry.yarnpkg.com/@babel/helper-module-imports/-/helper-module-imports-7.0.0-beta.51.tgz#ce00428045fbb7d5ebc0ea7bf835789f15366ab2"
@@ -285,12 +278,6 @@
 "@babel/plugin-syntax-optional-catch-binding@7.0.0-beta.51":
   version "7.0.0-beta.51"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-optional-catch-binding/-/plugin-syntax-optional-catch-binding-7.0.0-beta.51.tgz#ce2675720cb41248c26433515c90c94b9d01a6fd"
-  dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.51"
-
-"@babel/plugin-syntax-typescript@7.0.0-beta.51":
-  version "7.0.0-beta.51"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-typescript/-/plugin-syntax-typescript-7.0.0-beta.51.tgz#a2f2701ff65d006268cbc84ad1bb8eeab638b0c4"
   dependencies:
     "@babel/helper-plugin-utils" "7.0.0-beta.51"
 
@@ -502,13 +489,6 @@
   dependencies:
     "@babel/helper-plugin-utils" "7.0.0-beta.51"
 
-"@babel/plugin-transform-typescript@7.0.0-beta.51":
-  version "7.0.0-beta.51"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.0.0-beta.51.tgz#1d9e5ba7bf93fe37483cc321dbc9a7ebba5ff35b"
-  dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.51"
-    "@babel/plugin-syntax-typescript" "7.0.0-beta.51"
-
 "@babel/plugin-transform-unicode-regex@7.0.0-beta.51":
   version "7.0.0-beta.51"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-unicode-regex/-/plugin-transform-unicode-regex-7.0.0-beta.51.tgz#9019f91508f40b50a64435043228c4142c2cd864"
@@ -517,7 +497,7 @@
     "@babel/helper-regex" "7.0.0-beta.51"
     regexpu-core "^4.1.3"
 
-"@babel/preset-env@^7.0.0-beta.50", "@babel/preset-env@^7.0.0-beta.51":
+"@babel/preset-env@^7.0.0-beta.51":
   version "7.0.0-beta.51"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.0.0-beta.51.tgz#5b580e6e9e8304166c1317017e863c06dcfc04a2"
   dependencies:
@@ -572,13 +552,6 @@
     "@babel/plugin-transform-react-jsx-self" "7.0.0-beta.51"
     "@babel/plugin-transform-react-jsx-source" "7.0.0-beta.51"
 
-"@babel/preset-typescript@^7.0.0-beta.50":
-  version "7.0.0-beta.51"
-  resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.0.0-beta.51.tgz#95510b2b1493c6b210a499b73e80cd8a9e2f8ad1"
-  dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.51"
-    "@babel/plugin-transform-typescript" "7.0.0-beta.51"
-
 "@babel/template@7.0.0-beta.51":
   version "7.0.0-beta.51"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.0.0-beta.51.tgz#9602a40aebcf357ae9677e2532ef5fc810f5fbff"
@@ -609,14 +582,6 @@
   dependencies:
     esutils "^2.0.2"
     lodash "^4.2.0"
-    to-fast-properties "^2.0.0"
-
-"@babel/types@7.0.0-beta.49":
-  version "7.0.0-beta.49"
-  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.0.0-beta.49.tgz#b7e3b1c3f4d4cfe11bdf8c89f1efd5e1617b87a6"
-  dependencies:
-    esutils "^2.0.2"
-    lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
 "@babel/types@7.0.0-beta.51", "@babel/types@^7.0.0-beta.37":
@@ -653,9 +618,9 @@
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.6.3.tgz#65682e68a82701c70eefb38d7f941a2c0bfa90de"
 
-"@grafoo/babel-plugin@^0.0.1-alpha.8":
-  version "0.0.1-alpha.10"
-  resolved "https://registry.yarnpkg.com/@grafoo/babel-plugin/-/babel-plugin-0.0.1-alpha.10.tgz#e05211944974c1783642dfd128f0704b226e4ca3"
+"@grafoo/babel-plugin@^0.0.1-alpha.14":
+  version "0.0.1-alpha.14"
+  resolved "https://registry.yarnpkg.com/@grafoo/babel-plugin/-/babel-plugin-0.0.1-alpha.14.tgz#f9c411b28552b988c4ecec83d6932fa76ecef81c"
   dependencies:
     "@babel/core" "^7.0.0-beta.50"
     babel-literal-to-ast "^2.0.0"
@@ -663,29 +628,29 @@
     graphql "^0.13.1"
     graphql-query-compress "^1.0.0"
 
-"@grafoo/core@^0.0.1-alpha.8":
-  version "0.0.1-alpha.10"
-  resolved "https://registry.yarnpkg.com/@grafoo/core/-/core-0.0.1-alpha.10.tgz#18909fa171721ff80c2df52451ce3b0d129b8ca9"
+"@grafoo/core@^0.0.1-alpha.14":
+  version "0.0.1-alpha.14"
+  resolved "https://registry.yarnpkg.com/@grafoo/core/-/core-0.0.1-alpha.14.tgz#9975fbf0ecda75c7a2f380bf55b14c8d0b145b73"
   dependencies:
-    "@grafoo/transport" "^0.0.1-alpha.10"
-    "@grafoo/types" "^0.0.1-alpha.10"
+    "@grafoo/transport" "^0.0.1-alpha.14"
+    "@grafoo/types" "^0.0.1-alpha.14"
 
-"@grafoo/preact@^0.0.1-alpha.8":
-  version "0.0.1-alpha.10"
-  resolved "https://registry.yarnpkg.com/@grafoo/preact/-/preact-0.0.1-alpha.10.tgz#ea6fc030775a1189bc5c7d65e9360d1a7f593251"
+"@grafoo/preact@^0.0.1-alpha.14":
+  version "0.0.1-alpha.14"
+  resolved "https://registry.yarnpkg.com/@grafoo/preact/-/preact-0.0.1-alpha.14.tgz#a0747a93b42e1b969525cc76ed6ddfe702e6a49c"
   dependencies:
-    "@grafoo/types" "^0.0.1-alpha.10"
+    "@grafoo/types" "^0.0.1-alpha.14"
 
-"@grafoo/transport@^0.0.1-alpha.10":
-  version "0.0.1-alpha.10"
-  resolved "https://registry.yarnpkg.com/@grafoo/transport/-/transport-0.0.1-alpha.10.tgz#1c1e97a4e64742a4b8ff970fc90eb2b10b6c8699"
+"@grafoo/transport@^0.0.1-alpha.14":
+  version "0.0.1-alpha.14"
+  resolved "https://registry.yarnpkg.com/@grafoo/transport/-/transport-0.0.1-alpha.14.tgz#045126bd34492b2d43ef32086d4acde46fbc3b70"
   dependencies:
-    "@grafoo/types" "^0.0.1-alpha.10"
-    grafoo-bundle "^0.0.1-alpha.10"
+    "@grafoo/types" "^0.0.1-alpha.14"
+    grafoo-bundle "^0.0.1-alpha.14"
 
-"@grafoo/types@^0.0.1-alpha.10":
-  version "0.0.1-alpha.10"
-  resolved "https://registry.yarnpkg.com/@grafoo/types/-/types-0.0.1-alpha.10.tgz#0673c70a4f3654d2c54aa2a29d7ef19be1b9986e"
+"@grafoo/types@^0.0.1-alpha.14":
+  version "0.0.1-alpha.14"
+  resolved "https://registry.yarnpkg.com/@grafoo/types/-/types-0.0.1-alpha.14.tgz#9e4d22caac0cc6b50910d780dc01b74ee538fe2a"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -3336,6 +3301,14 @@ from2@^2.1.0, from2@^2.1.1:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
 
+fs-extra@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-5.0.0.tgz#414d0110cdd06705734d055652c5411260c31abd"
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
 fs-minipass@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/fs-minipass/-/fs-minipass-1.2.5.tgz#06c277218454ec288df77ada54a03b8702aacb9d"
@@ -3558,25 +3531,21 @@ got@^8.3.1:
     url-parse-lax "^3.0.0"
     url-to-options "^1.0.1"
 
-graceful-fs@^4.1.11, graceful-fs@^4.1.2:
+graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
-grafoo-bundle@^0.0.1-alpha.10:
-  version "0.0.1-alpha.10"
-  resolved "https://registry.yarnpkg.com/grafoo-bundle/-/grafoo-bundle-0.0.1-alpha.10.tgz#684d6f4b0b7ceb8c965c023b2ee2bf484e98892e"
+grafoo-bundle@^0.0.1-alpha.14:
+  version "0.0.1-alpha.14"
+  resolved "https://registry.yarnpkg.com/grafoo-bundle/-/grafoo-bundle-0.0.1-alpha.14.tgz#88ff33444a10fd6fcf30b45f6e8a078ddb18cb77"
   dependencies:
-    "@babel/core" "^7.0.0-beta.50"
-    "@babel/preset-env" "^7.0.0-beta.50"
-    "@babel/preset-typescript" "^7.0.0-beta.50"
     rollup "^0.59.4"
-    rollup-plugin-babel "^4.0.0-beta.4"
     rollup-plugin-buble "^0.19.2"
     rollup-plugin-filesize "^1.5.0"
     rollup-plugin-node-resolve "^3.3.0"
     rollup-plugin-terser "^1.0.1"
+    rollup-plugin-typescript2 "^0.15.0"
     typescript "^2.9.1"
-    util.promisify "^1.0.0"
 
 graphql-query-compress@^1.0.0:
   version "1.0.7"
@@ -4353,6 +4322,12 @@ json3@^3.3.2:
 json5@^0.5.0, json5@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/json5/-/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"
+
+jsonfile@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-4.0.0.tgz#8771aae0799b64076b76640fca058f9c10e33ecb"
+  optionalDependencies:
+    graceful-fs "^4.1.6"
 
 jsx-ast-utils@^2.0.1:
   version "2.0.1"
@@ -5891,7 +5866,7 @@ resolve-url@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
 
-resolve@^1.1.6, resolve@^1.3.2:
+resolve@^1.1.6, resolve@^1.3.2, resolve@^1.7.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.8.1.tgz#82f1ec19a423ac1fbd080b0bab06ba36e84a7a26"
   dependencies:
@@ -5938,13 +5913,6 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-rollup-plugin-babel@^4.0.0-beta.4:
-  version "4.0.0-beta.5"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-babel/-/rollup-plugin-babel-4.0.0-beta.5.tgz#1968a72a0be9414a2b073689cf747874cbf0a12b"
-  dependencies:
-    "@babel/helper-module-imports" "7.0.0-beta.49"
-    rollup-pluginutils "^2.0.1"
-
 rollup-plugin-buble@^0.19.2:
   version "0.19.2"
   resolved "https://registry.yarnpkg.com/rollup-plugin-buble/-/rollup-plugin-buble-0.19.2.tgz#c0590c7d3d475b5ed59f129764ec93710cc6e8dd"
@@ -5976,6 +5944,15 @@ rollup-plugin-terser@^1.0.1:
   dependencies:
     "@babel/code-frame" "^7.0.0-beta.47"
     terser "^3.7.5"
+
+rollup-plugin-typescript2@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-typescript2/-/rollup-plugin-typescript2-0.15.0.tgz#33cf4ec8528f6fa5686cf1246f047acec4801d3a"
+  dependencies:
+    fs-extra "^5.0.0"
+    resolve "^1.7.1"
+    rollup-pluginutils "^2.0.1"
+    tslib "1.9.2"
 
 rollup-pluginutils@^2.0.1:
   version "2.3.0"
@@ -6639,7 +6616,7 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-tslib@^1.9.0:
+tslib@1.9.2, tslib@^1.9.0:
   version "1.9.2"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.2.tgz#8be0cc9a1f6dc7727c38deb16c2ebd1a2892988e"
 
@@ -6742,6 +6719,10 @@ unique-slug@^2.0.0:
   resolved "https://registry.yarnpkg.com/unique-slug/-/unique-slug-2.0.0.tgz#db6676e7c7cc0629878ff196097c78855ae9f4ab"
   dependencies:
     imurmurhash "^0.1.4"
+
+universalify@^0.1.0:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
 
 unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"

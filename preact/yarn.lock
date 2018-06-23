@@ -639,8 +639,8 @@
   resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-0.7.1.tgz#e44e596d03c9f16ba3b127ad333a8a072bcb5a0a"
 
 "@grafoo/babel-plugin@^0.0.1-alpha.14":
-  version "0.0.1-alpha.16"
-  resolved "https://registry.yarnpkg.com/@grafoo/babel-plugin/-/babel-plugin-0.0.1-alpha.16.tgz#179d583631ecd851fdf161e948cc4048f4753118"
+  version "0.0.1-alpha.17"
+  resolved "https://registry.yarnpkg.com/@grafoo/babel-plugin/-/babel-plugin-0.0.1-alpha.17.tgz#8b744518f31c8e796d66248af5a3fa1d8365d16e"
   dependencies:
     "@babel/core" "^7.0.0-beta.50"
     babel-literal-to-ast "^2.0.0"
@@ -649,28 +649,28 @@
     graphql-query-compress "^1.0.0"
 
 "@grafoo/core@^0.0.1-alpha.14":
-  version "0.0.1-alpha.16"
-  resolved "https://registry.yarnpkg.com/@grafoo/core/-/core-0.0.1-alpha.16.tgz#91003f870f31fb054b7b02d271639ca385109dc1"
+  version "0.0.1-alpha.17"
+  resolved "https://registry.yarnpkg.com/@grafoo/core/-/core-0.0.1-alpha.17.tgz#fe95f72e30aefb6c0641bb72f86b3111f1b24d75"
   dependencies:
-    "@grafoo/transport" "^0.0.1-alpha.16"
-    "@grafoo/types" "^0.0.1-alpha.16"
+    "@grafoo/transport" "^0.0.1-alpha.17"
+    "@grafoo/types" "^0.0.1-alpha.17"
 
 "@grafoo/preact@^0.0.1-alpha.14":
-  version "0.0.1-alpha.16"
-  resolved "https://registry.yarnpkg.com/@grafoo/preact/-/preact-0.0.1-alpha.16.tgz#b11e5b5672a5ea19c0b8fc3a9ab751e0fdfb0928"
+  version "0.0.1-alpha.17"
+  resolved "https://registry.yarnpkg.com/@grafoo/preact/-/preact-0.0.1-alpha.17.tgz#edac450d2e87a4b0329b6d003154553e8e6187ed"
   dependencies:
-    "@grafoo/types" "^0.0.1-alpha.16"
+    "@grafoo/types" "^0.0.1-alpha.17"
 
-"@grafoo/transport@^0.0.1-alpha.16":
-  version "0.0.1-alpha.16"
-  resolved "https://registry.yarnpkg.com/@grafoo/transport/-/transport-0.0.1-alpha.16.tgz#00ce7da5c09b5cf86b0a20cf1a2cb4378de9b46d"
+"@grafoo/transport@^0.0.1-alpha.17":
+  version "0.0.1-alpha.17"
+  resolved "https://registry.yarnpkg.com/@grafoo/transport/-/transport-0.0.1-alpha.17.tgz#d55d2197520cfe6001bb1269947d31354d496d99"
   dependencies:
-    "@grafoo/types" "^0.0.1-alpha.16"
-    grafoo-bundle "^0.0.1-alpha.16"
+    "@grafoo/types" "^0.0.1-alpha.17"
+    grafoo-bundle "^0.0.1-alpha.17"
 
-"@grafoo/types@^0.0.1-alpha.16":
-  version "0.0.1-alpha.16"
-  resolved "https://registry.yarnpkg.com/@grafoo/types/-/types-0.0.1-alpha.16.tgz#e9628a5aecd003f6e868ac83a485d27d9ed118d8"
+"@grafoo/types@^0.0.1-alpha.17":
+  version "0.0.1-alpha.17"
+  resolved "https://registry.yarnpkg.com/@grafoo/types/-/types-0.0.1-alpha.17.tgz#7b943dc2ccd37bf7be40f9e51f2a819a6a51ccd0"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -3561,9 +3561,9 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
-grafoo-bundle@^0.0.1-alpha.16:
-  version "0.0.1-alpha.16"
-  resolved "https://registry.yarnpkg.com/grafoo-bundle/-/grafoo-bundle-0.0.1-alpha.16.tgz#e260a10c7e2528e26518f6ce6da941f86e7f876e"
+grafoo-bundle@^0.0.1-alpha.17:
+  version "0.0.1-alpha.17"
+  resolved "https://registry.yarnpkg.com/grafoo-bundle/-/grafoo-bundle-0.0.1-alpha.17.tgz#6edece3b08c42c36989c0ffbd88336d88c1069dd"
   dependencies:
     rollup "^0.59.4"
     rollup-plugin-buble "^0.19.2"

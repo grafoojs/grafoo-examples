@@ -8,7 +8,7 @@
   dependencies:
     "@babel/highlight" "7.0.0-beta.51"
 
-"@babel/core@^7.0.0-beta.50", "@babel/core@^7.0.0-beta.51":
+"@babel/core@^7.0.0-beta.51":
   version "7.0.0-beta.51"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.0.0-beta.51.tgz#0e54bd6b638736b2ae593c31a47f0969e2b2b96d"
   dependencies:
@@ -638,39 +638,37 @@
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-0.7.1.tgz#e44e596d03c9f16ba3b127ad333a8a072bcb5a0a"
 
-"@grafoo/babel-plugin@^0.0.1-alpha.14":
-  version "0.0.1-alpha.17"
-  resolved "https://registry.yarnpkg.com/@grafoo/babel-plugin/-/babel-plugin-0.0.1-alpha.17.tgz#8b744518f31c8e796d66248af5a3fa1d8365d16e"
+"@grafoo/babel-plugin@^0.0.1-beta.6":
+  version "0.0.1-beta.6"
+  resolved "https://registry.yarnpkg.com/@grafoo/babel-plugin/-/babel-plugin-0.0.1-beta.6.tgz#f24fe11365369c1736fbf59999e89b451eb8a4fc"
   dependencies:
-    "@babel/core" "^7.0.0-beta.50"
     babel-literal-to-ast "^2.0.0"
-    babel-plugin-tester "^5.0.0"
     graphql "^0.13.1"
     graphql-query-compress "^1.0.0"
 
-"@grafoo/core@^0.0.1-alpha.14":
-  version "0.0.1-alpha.17"
-  resolved "https://registry.yarnpkg.com/@grafoo/core/-/core-0.0.1-alpha.17.tgz#fe95f72e30aefb6c0641bb72f86b3111f1b24d75"
+"@grafoo/core@^0.0.1-beta.6":
+  version "0.0.1-beta.6"
+  resolved "https://registry.yarnpkg.com/@grafoo/core/-/core-0.0.1-beta.6.tgz#bcc0680b46399d322b2c5b8b4e2c2676841fb71a"
   dependencies:
-    "@grafoo/transport" "^0.0.1-alpha.17"
-    "@grafoo/types" "^0.0.1-alpha.17"
+    "@grafoo/transport" "^0.0.1-beta.6"
+    "@grafoo/types" "^0.0.1-beta.6"
 
-"@grafoo/react@^0.0.1-alpha.14":
-  version "0.0.1-alpha.17"
-  resolved "https://registry.yarnpkg.com/@grafoo/react/-/react-0.0.1-alpha.17.tgz#468336dc288221343ee0b076f8aae38f2eac73ff"
+"@grafoo/react@^0.0.1-beta.6":
+  version "0.0.1-beta.6"
+  resolved "https://registry.yarnpkg.com/@grafoo/react/-/react-0.0.1-beta.6.tgz#238a80b7230534e735cb69ad26daeed80717e45f"
   dependencies:
-    "@grafoo/types" "^0.0.1-alpha.17"
+    "@grafoo/types" "^0.0.1-beta.6"
 
-"@grafoo/transport@^0.0.1-alpha.17":
-  version "0.0.1-alpha.17"
-  resolved "https://registry.yarnpkg.com/@grafoo/transport/-/transport-0.0.1-alpha.17.tgz#d55d2197520cfe6001bb1269947d31354d496d99"
+"@grafoo/transport@^0.0.1-beta.6":
+  version "0.0.1-beta.6"
+  resolved "https://registry.yarnpkg.com/@grafoo/transport/-/transport-0.0.1-beta.6.tgz#e203135dedbb96ea127fc021a2229c3c784848e5"
   dependencies:
-    "@grafoo/types" "^0.0.1-alpha.17"
-    grafoo-bundle "^0.0.1-alpha.17"
+    "@grafoo/types" "^0.0.1-beta.6"
+    grafoo-bundle "^0.0.1-beta.6"
 
-"@grafoo/types@^0.0.1-alpha.14", "@grafoo/types@^0.0.1-alpha.17":
-  version "0.0.1-alpha.17"
-  resolved "https://registry.yarnpkg.com/@grafoo/types/-/types-0.0.1-alpha.17.tgz#7b943dc2ccd37bf7be40f9e51f2a819a6a51ccd0"
+"@grafoo/types@^0.0.1-beta.6":
+  version "0.0.1-beta.6"
+  resolved "https://registry.yarnpkg.com/@grafoo/types/-/types-0.0.1-beta.6.tgz#d360868b6518f44f6075644bd9f8494c103fea96"
 
 "@types/estree@0.0.39":
   version "0.0.39"
@@ -1063,16 +1061,6 @@ babel-plugin-macros@^2.0.0:
 babel-plugin-syntax-jsx@^6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
-
-babel-plugin-tester@^5.0.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-tester/-/babel-plugin-tester-5.4.0.tgz#cf4054138a3a7850891a959427993e1bb4d201d7"
-  dependencies:
-    common-tags "^1.4.0"
-    invariant "^2.2.2"
-    lodash.merge "^4.6.0"
-    path-exists "^3.0.0"
-    strip-indent "^2.0.0"
 
 babylon@^7.0.0-beta.37:
   version "7.0.0-beta.47"
@@ -1480,10 +1468,6 @@ commander@~2.13.0:
 commander@~2.14.1:
   version "2.14.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.14.1.tgz#2235123e37af8ca3c65df45b026dbd357b01b9aa"
-
-common-tags@^1.4.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/common-tags/-/common-tags-1.8.0.tgz#8e3153e542d4a39e9b10554434afaaf98956a937"
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -2456,10 +2440,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
-grafoo-bundle@^0.0.1-alpha.17:
-  version "0.0.1-alpha.17"
-  resolved "https://registry.yarnpkg.com/grafoo-bundle/-/grafoo-bundle-0.0.1-alpha.17.tgz#6edece3b08c42c36989c0ffbd88336d88c1069dd"
+grafoo-bundle@^0.0.1-beta.6:
+  version "0.0.1-beta.6"
+  resolved "https://registry.yarnpkg.com/grafoo-bundle/-/grafoo-bundle-0.0.1-beta.6.tgz#9ba71bbc352ec1093e3a585b44c8706e3eedc086"
   dependencies:
+    mri "^1.1.1"
     rollup "^0.59.4"
     rollup-plugin-buble "^0.19.2"
     rollup-plugin-filesize "^1.5.0"
@@ -3142,10 +3127,6 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
-lodash.merge@^4.6.0:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.1.tgz#adc25d9cb99b9391c59624f379fbba60d7111d54"
-
 lodash@^4.17.3, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.3.0:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
@@ -3418,6 +3399,10 @@ move-concurrently@^1.0.1:
     mkdirp "^0.5.1"
     rimraf "^2.5.4"
     run-queue "^1.0.3"
+
+mri@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/mri/-/mri-1.1.1.tgz#85aa26d3daeeeedf80dc5984af95cc5ca5cad9f1"
 
 ms@2.0.0:
   version "2.0.0"
@@ -4721,10 +4706,6 @@ strip-indent@^1.0.1:
   resolved "https://registry.yarnpkg.com/strip-indent/-/strip-indent-1.0.1.tgz#0c7962a6adefa7bbd4ac366460a638552ae1a0a2"
   dependencies:
     get-stdin "^4.0.1"
-
-strip-indent@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/strip-indent/-/strip-indent-2.0.0.tgz#5ef8db295d01e6ed6cbf7aab96998d7822527b68"
 
 strip-json-comments@~2.0.1:
   version "2.0.1"

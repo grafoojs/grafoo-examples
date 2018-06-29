@@ -1,23 +1,26 @@
 import { Consumer } from "@grafoo/react";
 import { GrafooMutations } from "@grafoo/types";
 import * as React from "react";
-import { Button, Form, H1, H2, Input, Item, List, PostContent, Textarea, Wrapper } from "./ui-kit";
+import * as q from "./queries";
 import {
-  AllPosts,
-  ALL_POSTS,
-  CreatePost,
-  CREATE_POST,
-  DeletePost,
-  DELETE_POST,
-  UpdatePost,
-  UPDATE_POST,
-  Post
-} from "./queries";
+  Button,
+  Center,
+  Form,
+  H1,
+  H2,
+  Input,
+  Item,
+  List,
+  PostContent,
+  Spinner,
+  Textarea,
+  Wrapper
+} from "./ui-kit";
 
 interface Mutations {
-  createPost: CreatePost;
-  updatePost: UpdatePost;
-  deletePost: DeletePost;
+  createPost: q.CreatePost;
+  updatePost: q.UpdatePost;
+  deletePost: q.DeletePost;
 }
 
 interface State {
@@ -26,10 +29,10 @@ interface State {
   id: string;
 }
 
-const mutations: GrafooMutations<AllPosts, Mutations> = {
+const mutations: GrafooMutations<q.AllPosts, Mutations> = {
   createPost: {
-    query: CREATE_POST,
-    optimisticUpdate: ({ allPosts }, variables: Post) => ({
+    query: q.CREATE_POST,
+    optimisticUpdate: ({ allPosts }, variables: q.Post) => ({
       allPosts: [{ ...variables, id: "tempID" }, ...allPosts]
     }),
     update: ({ allPosts }, { createPost: post }) => ({
@@ -37,20 +40,14 @@ const mutations: GrafooMutations<AllPosts, Mutations> = {
     })
   },
   updatePost: {
-    query: UPDATE_POST,
-    optimisticUpdate: ({ allPosts }, variables: Post) => ({
-      allPosts: allPosts.map(p => (p.id === variables.id ? variables : p))
-    }),
-    update: ({ allPosts }, { updatePost: post }) => ({
-      allPosts: allPosts.map(p => (p.id === post.id ? post : p))
+    query: q.UPDATE_POST,
+    optimisticUpdate: ({ allPosts }, variables: q.Post) => ({
+      allPosts: allPosts.map(p => (p.id === variables.id ? { ...p, ...variables } : p))
     })
   },
   deletePost: {
-    query: DELETE_POST,
+    query: q.DELETE_POST,
     optimisticUpdate: ({ allPosts }, { id }) => ({
-      allPosts: allPosts.filter(_ => _.id !== id)
-    }),
-    update: ({ allPosts }, { deletePost: { id } }) => ({
       allPosts: allPosts.filter(_ => _.id !== id)
     })
   }
@@ -64,7 +61,7 @@ export default class Posts extends React.Component<{}, State> {
   handleChange = (value: "title" | "content") => (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    this.setState({ [value]: event.target.value } as any);
+    this.setState({ [value]: event.target.value } as Pick<State, typeof value>);
   };
 
   submit = mutate => (event: React.FormEvent<HTMLFormElement>) => {
@@ -79,7 +76,7 @@ export default class Posts extends React.Component<{}, State> {
     const { title, content, id } = this.state;
 
     return (
-      <Consumer<AllPosts, Mutations> query={ALL_POSTS} variables={variables} mutations={mutations}>
+      <Consumer query={q.ALL_POSTS} variables={variables} mutations={mutations}>
         {props => (
           <React.Fragment>
             <Wrapper>
@@ -110,7 +107,9 @@ export default class Posts extends React.Component<{}, State> {
                 ))}
               </List>
             ) : (
-              <Wrapper>loading...</Wrapper>
+              <Center>
+                <Spinner />
+              </Center>
             )}
           </React.Fragment>
         )}

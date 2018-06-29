@@ -1,4 +1,4 @@
-import styled from "react-emotion";
+import styled, { keyframes } from "react-emotion";
 
 export const Wrapper = styled.div`
   padding: 1em;
@@ -74,6 +74,29 @@ export const Item = styled.li`
     background: #efefef;
   }
 `;
+
+const spin = keyframes`
+  0% { transform: rotate(0) }
+  100% { transform: rotate(360deg) }
+`;
+
+export const Spinner = styled.div`
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 15px solid #333;
+  border-right-color: gold;
+  border-left-color: gold;
+  animation: ${spin} 0.5s linear infinite;
+`;
+
+export const Center = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
 
 export const PostContent = styled.div`
   margin-bottom: 10px;

@@ -1,7 +1,20 @@
 import { Consumer } from "@grafoo/preact";
 import { h, Component } from "preact";
 import { ALL_POSTS, CREATE_POST, DELETE_POST, UPDATE_POST } from "./queries";
-import { Button, Form, H1, H2, Input, Item, List, Textarea, Wrapper, PostContent } from "./ui-kit";
+import {
+  Button,
+  Center,
+  Form,
+  H1,
+  H2,
+  Input,
+  Item,
+  List,
+  PostContent,
+  Spinner,
+  Textarea,
+  Wrapper
+} from "./ui-kit";
 
 const mutations = {
   createPost: {
@@ -83,7 +96,9 @@ export default class Posts extends Component {
                 ))}
               </List>
             ) : (
-              <Wrapper>loading...</Wrapper>
+              <Center>
+                <Spinner />
+              </Center>
             )}
           </div>
         )}

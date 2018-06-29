@@ -1,18 +1,10 @@
 {
-  "presets": [
-    ["@babel/preset-env", { "targets": { "chrome": 65 } }],
-    ["@babel/preset-react", { "pragma": "h" }]
-  ],
+  "presets": ["env"],
   "plugins": [
-    "@babel/plugin-proposal-class-properties",
-    ["module:@grafoo/babel-plugin", { "schema": "schema.graphql", "idFields": ["id"] }]
-  ],
-  "env": {
-    "production": {
-      "plugins": [["babel-plugin-emotion", { "hoist": true }]]
-    },
-    "development": {
-      "plugins": [["babel-plugin-emotion", { "sourceMap": true, "autoLabel": true }]]
-    }
-  }
+    "transform-object-rest-spread",
+    "transform-class-properties",
+    ["transform-react-jsx", { "pragma": "h" }],
+    ["@grafoo/babel-plugin", { "schema": "schema.graphql", "idFields": ["id"] }],
+    ["babel-plugin-emotion", { "sourceMap": true, "autoLabel": true }]
+  ]
 }

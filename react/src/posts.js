@@ -1,7 +1,20 @@
 import { Consumer } from "@grafoo/react";
 import React from "react";
 import { ALL_POSTS, CREATE_POST, DELETE_POST, UPDATE_POST } from "./queries";
-import { Button, Form, H1, H2, Input, Item, List, Textarea, Wrapper, PostContent } from "./ui-kit";
+import {
+  Button,
+  Form,
+  H1,
+  H2,
+  Input,
+  Item,
+  List,
+  Textarea,
+  Wrapper,
+  Center,
+  Spinner,
+  PostContent
+} from "./ui-kit";
 
 const mutations = {
   createPost: {
@@ -87,7 +100,9 @@ export default class Posts extends React.Component {
                 ))}
               </List>
             ) : (
-              <Wrapper>loading...</Wrapper>
+              <Center>
+                <Spinner />
+              </Center>
             )}
           </React.Fragment>
         )}

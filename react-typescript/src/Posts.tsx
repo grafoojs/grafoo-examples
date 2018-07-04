@@ -1,38 +1,19 @@
 import { Consumer } from "@grafoo/react";
-import { GrafooMutations } from "@grafoo/types";
+import { GrafooMutations, Variables } from "@grafoo/types";
 import * as React from "react";
-import * as q from "./queries";
-import {
-  Button,
-  Center,
-  Form,
-  H1,
-  H2,
-  Input,
-  Item,
-  List,
-  PostContent,
-  Spinner,
-  Textarea,
-  Wrapper
-} from "./ui-kit";
+import * as queries from "./queries";
+import * as ui from "./ui-kit";
 
 interface Mutations {
-  createPost: q.CreatePost;
-  updatePost: q.UpdatePost;
-  deletePost: q.DeletePost;
+  createPost: queries.CreatePost;
+  updatePost: queries.UpdatePost;
+  deletePost: queries.DeletePost;
 }
 
-interface State {
-  title: string;
-  content: string;
-  id: string;
-}
-
-const mutations: GrafooMutations<q.AllPosts, Mutations> = {
+const mutations: GrafooMutations<queries.AllPosts, Mutations> = {
   createPost: {
-    query: q.CREATE_POST,
-    optimisticUpdate: ({ allPosts }, variables: q.Post) => ({
+    query: queries.CREATE_POST,
+    optimisticUpdate: ({ allPosts }, variables: queries.Post) => ({
       allPosts: [{ ...variables, id: "tempID" }, ...allPosts]
     }),
     update: ({ allPosts }, { createPost: post }) => ({
@@ -40,18 +21,26 @@ const mutations: GrafooMutations<q.AllPosts, Mutations> = {
     })
   },
   updatePost: {
-    query: q.UPDATE_POST,
-    optimisticUpdate: ({ allPosts }, variables: q.Post) => ({
-      allPosts: allPosts.map(p => (p.id === variables.id ? { ...p, ...variables } : p))
+    query: queries.UPDATE_POST,
+    optimisticUpdate: ({ allPosts }, variables: queries.Post) => ({
+      allPosts: allPosts.map(
+        p => (p.id === variables.id ? { ...p, ...variables } : p)
+      )
     })
   },
   deletePost: {
-    query: q.DELETE_POST,
+    query: queries.DELETE_POST,
     optimisticUpdate: ({ allPosts }, { id }) => ({
       allPosts: allPosts.filter(_ => _.id !== id)
     })
   }
 };
+
+interface State {
+  title: string;
+  content: string;
+  id: string;
+}
 
 const variables = { orderBy: "createdAt_DESC" };
 
@@ -61,10 +50,12 @@ export default class Posts extends React.Component<{}, State> {
   handleChange = (value: "title" | "content") => (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    this.setState({ [value]: event.target.value } as Pick<State, typeof value>);
+    this.setState({ [value]: event.target.value } as any);
   };
 
-  submit = mutate => (event: React.FormEvent<HTMLFormElement>) => {
+  submit = (mutate: (variables?: Variables) => Promise<{}>) => (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
     event.preventDefault();
 
     mutate(this.state).then(() => {
@@ -76,40 +67,52 @@ export default class Posts extends React.Component<{}, State> {
     const { title, content, id } = this.state;
 
     return (
-      <Consumer query={q.ALL_POSTS} variables={variables} mutations={mutations}>
+      <Consumer query={queries.ALL_POSTS} variables={variables} mutations={mutations}>
         {props => (
           <React.Fragment>
-            <Wrapper>
-              <H1>Post Form</H1>
-              <Form onSubmit={this.submit(id ? props.updatePost : props.createPost)}>
-                <Input placeholder="title" value={title} onChange={this.handleChange("title")} />
-                <Textarea
+            <ui.Wrapper>
+              <ui.H1>Post Form</ui.H1>
+              <ui.Form
+                onSubmit={this.submit(id ? props.updatePost : props.createPost)}
+              >
+                <ui.Input
+                  placeholder="title"
+                  value={title}
+                  onChange={this.handleChange("title")}
+                />
+                <ui.Textarea
                   placeholder="content"
                   value={content}
                   onChange={this.handleChange("content")}
                 />
-                <Button>submit</Button>
-              </Form>
-            </Wrapper>
+                <ui.Button>submit</ui.Button>
+              </ui.Form>
+            </ui.Wrapper>
             {props.loaded ? (
-              <List>
+              <ui.List>
                 {props.allPosts.map(({ id, title, content }) => (
-                  <Item key={id}>
-                    <Wrapper>
-                      <H2>{title}</H2>
-                      <PostContent dangerouslySetInnerHTML={{ __html: content }} />
-                      <Button onClick={() => this.setState({ id, title, content })}>
+                  <ui.Item key={id}>
+                    <ui.Wrapper>
+                      <ui.H2>{title}</ui.H2>
+                      <ui.PostContent
+                        dangerouslySetInnerHTML={{ __html: content }}
+                      />
+                      <ui.Button
+                        onClick={() => this.setState({ id, title, content })}
+                      >
                         update post
-                      </Button>{" "}
-                      <Button onClick={() => props.deletePost({ id })}>remove post</Button>
-                    </Wrapper>
-                  </Item>
+                      </ui.Button>{" "}
+                      <ui.Button onClick={() => props.deletePost({ id })}>
+                        remove post
+                      </ui.Button>
+                    </ui.Wrapper>
+                  </ui.Item>
                 ))}
-              </List>
+              </ui.List>
             ) : (
-              <Center>
-                <Spinner />
-              </Center>
+              <ui.Center>
+                <ui.Spinner />
+              </ui.Center>
             )}
           </React.Fragment>
         )}

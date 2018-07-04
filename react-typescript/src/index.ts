@@ -2,9 +2,23 @@ import "./globalstyles";
 
 import createClient from "@grafoo/core";
 import bootstrap from "./bootstrap";
-import { ClientInstance } from "@grafoo/types";
+import { GrafooClient } from "@grafoo/types";
 
-const client = createClient("https://api.graph.cool/simple/v1/cj28ccc28umr50115gjodwzix");
+function fetchQuery(query, variables) {
+  const init = {
+    method: "POST",
+    body: JSON.stringify({ query, variables }),
+    headers: {
+      "content-type": "application/json"
+    }
+  };
+
+  return fetch("https://api.graph.cool/simple/v1/cj28ccc28umr50115gjodwzix", init).then(res =>
+    res.json()
+  );
+}
+
+const client = createClient(fetchQuery);
 
 if (process.env.NODE_ENV !== "production") {
   window.client = client;
@@ -18,6 +32,6 @@ bootstrap(client);
 
 declare global {
   interface Window {
-    client: ClientInstance;
+    client: GrafooClient;
   }
 }

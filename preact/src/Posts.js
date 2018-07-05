@@ -1,24 +1,11 @@
 import { Consumer } from "@grafoo/preact";
 import { h, Component } from "preact";
-import { ALL_POSTS, CREATE_POST, DELETE_POST, UPDATE_POST } from "./queries";
-import {
-  Button,
-  Center,
-  Form,
-  H1,
-  H2,
-  Input,
-  Item,
-  List,
-  PostContent,
-  Spinner,
-  Textarea,
-  Wrapper
-} from "./ui-kit";
+import * as queries from "./queries";
+import * as ui from "./ui-kit";
 
 const mutations = {
   createPost: {
-    query: CREATE_POST,
+    query: queries.CREATE_POST,
     optimisticUpdate: ({ allPosts }, post) => ({
       allPosts: [{ ...post, id: "tempID" }, ...allPosts]
     }),
@@ -27,7 +14,7 @@ const mutations = {
     })
   },
   updatePost: {
-    query: UPDATE_POST,
+    query: queries.UPDATE_POST,
     optimisticUpdate: ({ allPosts }, post) => ({
       allPosts: allPosts.map(p => (p.id === post.id ? post : p))
     }),
@@ -36,7 +23,7 @@ const mutations = {
     })
   },
   deletePost: {
-    query: DELETE_POST,
+    query: queries.DELETE_POST,
     optimisticUpdate: ({ allPosts }, { id }) => ({
       allPosts: allPosts.filter(_ => _.id !== id)
     }),
@@ -45,6 +32,8 @@ const mutations = {
     })
   }
 };
+
+const variables = { orderBy: "createdAt_DESC" };
 
 export default class Posts extends Component {
   state = { title: "", content: "", id: null };
@@ -61,44 +50,44 @@ export default class Posts extends Component {
 
   render({}, state) {
     return (
-      <Consumer query={ALL_POSTS} variables={{ orderBy: "createdAt_DESC" }} mutations={mutations}>
+      <Consumer query={queries.ALL_POSTS} variables={variables} mutations={mutations}>
         {props => (
           <div>
-            <Wrapper>
-              <H1>Post Form</H1>
-              <Form onSubmit={this.submit(state.id ? props.updatePost : props.createPost)}>
-                <Input
+            <ui.Wrapper>
+              <ui.H1>Post Form</ui.H1>
+              <ui.Form onSubmit={this.submit(state.id ? props.updatePost : props.createPost)}>
+                <ui.Input
                   placeholder="title"
                   value={state.title}
                   onInput={this.handleChange("title")}
                 />
-                <Textarea
+                <ui.Textarea
                   placeholder="content"
                   value={state.content}
                   onInput={this.handleChange("content")}
                 />
-                <Button>submit</Button>
-              </Form>
-            </Wrapper>
+                <ui.Button>submit</ui.Button>
+              </ui.Form>
+            </ui.Wrapper>
             {props.loaded ? (
-              <List>
+              <ui.List>
                 {props.allPosts.map(({ id, title, content }) => (
-                  <Item key={id}>
-                    <Wrapper>
-                      <H2>{title}</H2>
-                      <PostContent dangerouslySetInnerHTML={{ __html: content }} />
-                      <Button onClick={() => this.setState({ id, title, content })}>
+                  <ui.Item key={id}>
+                    <ui.Wrapper>
+                      <ui.H2>{title}</ui.H2>
+                      <ui.PostContent dangerouslySetInnerHTML={{ __html: content }} />
+                      <ui.Button onClick={() => this.setState({ id, title, content })}>
                         update post
-                      </Button>{" "}
-                      <Button onClick={() => props.deletePost({ id })}>remove post</Button>
-                    </Wrapper>
-                  </Item>
+                      </ui.Button>{" "}
+                      <ui.Button onClick={() => props.deletePost({ id })}>remove post</ui.Button>
+                    </ui.Wrapper>
+                  </ui.Item>
                 ))}
-              </List>
+              </ui.List>
             ) : (
-              <Center>
-                <Spinner />
-              </Center>
+              <ui.Center>
+                <ui.Spinner />
+              </ui.Center>
             )}
           </div>
         )}

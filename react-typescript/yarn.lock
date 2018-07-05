@@ -144,35 +144,35 @@
   resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-0.7.1.tgz#e44e596d03c9f16ba3b127ad333a8a072bcb5a0a"
 
 "@grafoo/babel-plugin@^0.0.1-beta.8":
-  version "0.0.1-beta.8"
-  resolved "https://registry.yarnpkg.com/@grafoo/babel-plugin/-/babel-plugin-0.0.1-beta.8.tgz#8c1bb208bd81df82fc84f359317608537a90304f"
+  version "0.0.1-beta.10"
+  resolved "https://registry.yarnpkg.com/@grafoo/babel-plugin/-/babel-plugin-0.0.1-beta.10.tgz#f31a3ab922a1d486b01af28a6e61bd7348409469"
   dependencies:
     babel-literal-to-ast "^2.0.0"
     graphql "^0.13.1"
     graphql-query-compress "^1.0.0"
 
-"@grafoo/bindings@^0.0.1-beta.8":
-  version "0.0.1-beta.8"
-  resolved "https://registry.yarnpkg.com/@grafoo/bindings/-/bindings-0.0.1-beta.8.tgz#4a824d8a27484a6881adb276609661dfb3a06229"
+"@grafoo/bindings@^0.0.1-beta.10":
+  version "0.0.1-beta.10"
+  resolved "https://registry.yarnpkg.com/@grafoo/bindings/-/bindings-0.0.1-beta.10.tgz#c57feff85026e36612b0a961c577c63dcda025ac"
   dependencies:
-    "@grafoo/types" "^0.0.1-beta.8"
+    "@grafoo/types" "^0.0.1-beta.10"
 
 "@grafoo/core@^0.0.1-beta.8":
-  version "0.0.1-beta.8"
-  resolved "https://registry.yarnpkg.com/@grafoo/core/-/core-0.0.1-beta.8.tgz#0c061609e3c23b0d71fcc263e3acc0ce239afad6"
+  version "0.0.1-beta.10"
+  resolved "https://registry.yarnpkg.com/@grafoo/core/-/core-0.0.1-beta.10.tgz#235ff79352ae548b88048349d3b5d635a5523396"
   dependencies:
-    "@grafoo/types" "^0.0.1-beta.8"
+    "@grafoo/types" "^0.0.1-beta.10"
 
 "@grafoo/react@^0.0.1-beta.8":
-  version "0.0.1-beta.8"
-  resolved "https://registry.yarnpkg.com/@grafoo/react/-/react-0.0.1-beta.8.tgz#b2bfcaf6e2ac5e7b76030513bb0614d1a7b94b7a"
+  version "0.0.1-beta.10"
+  resolved "https://registry.yarnpkg.com/@grafoo/react/-/react-0.0.1-beta.10.tgz#fd20eff45f43c498e7d1b31c95dfdc2fa0eb09b5"
   dependencies:
-    "@grafoo/bindings" "^0.0.1-beta.8"
-    "@grafoo/types" "^0.0.1-beta.8"
+    "@grafoo/bindings" "^0.0.1-beta.10"
+    "@grafoo/types" "^0.0.1-beta.10"
 
-"@grafoo/types@^0.0.1-beta.8":
-  version "0.0.1-beta.8"
-  resolved "https://registry.yarnpkg.com/@grafoo/types/-/types-0.0.1-beta.8.tgz#0537858153a2a38535fbf304abbfdc50fa472530"
+"@grafoo/types@^0.0.1-beta.10", "@grafoo/types@^0.0.1-beta.8":
+  version "0.0.1-beta.10"
+  resolved "https://registry.yarnpkg.com/@grafoo/types/-/types-0.0.1-beta.10.tgz#b2c8db8988013b0d54b059bcea7e56b676a89ec2"
 
 "@types/node@*", "@types/node@^10.3.3":
   version "10.5.1"

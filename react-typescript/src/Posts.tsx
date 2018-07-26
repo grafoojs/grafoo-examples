@@ -50,7 +50,7 @@ export default class Posts extends React.Component<{}, State> {
   handleChange = (value: "title" | "content") => (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    this.setState({ [value]: event.target.value } as any);
+    this.setState({ [value]: event.target.value } as Pick<State, typeof value>);
   };
 
   submit = (mutate: (variables?: Variables) => Promise<{}>) => (

@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Provider } from "@grafoo/react";
 import Posts from "./Posts";
-import { ClientInstance } from "@grafoo/types";
+import { GrafooClient } from "@grafoo/types";
 
 interface Props {
-  client: ClientInstance;
+  client: GrafooClient;
 }
 
 const App: React.SFC<Props> = ({ client }) => (

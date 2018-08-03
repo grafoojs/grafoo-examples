@@ -8,7 +8,9 @@ import * as queries from "./queries";
 export default class Posts extends React.Component {
   state = { title: "", content: "", id: null };
 
-  handleChange = value => text => this.setState({ [value]: text });
+  handleChange = value => text => {
+    this.setState({ [value]: text });
+  };
 
   submit = mutate => () =>
     mutate(this.state).then(() => {
@@ -44,7 +46,7 @@ export default class Posts extends React.Component {
                 />
               </View>
               {props.loaded ? (
-                <PostsList {...props} />
+                <PostsList {...props} setPost={post => this.setState(post)} />
               ) : (
                 <View style={s.section}>
                   <Text>loading</Text>

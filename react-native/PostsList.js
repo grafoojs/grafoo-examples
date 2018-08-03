@@ -15,7 +15,7 @@ export default function PostsList(props) {
               <Button
                 title="update"
                 color="#333"
-                onPress={() => this.setState({ id, title, content })}
+                onPress={() => props.setPost({ id, title, content })}
               />
             </View>
             <View style={s.btn(1)}>

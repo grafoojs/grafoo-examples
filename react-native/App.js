@@ -5,12 +5,8 @@ import Posts from "./Posts";
 
 const client = createClient();
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <Provider client={client}>
-        <Posts />
-      </Provider>
-    );
-  }
-}
+export default () => (
+  <Provider client={client}>
+    <Posts />
+  </Provider>
+);

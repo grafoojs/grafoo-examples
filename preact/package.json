@@ -5,7 +5,7 @@
     "build": "parcel build src/index.html"
   },
   "devDependencies": {
-    "@grafoo/babel-plugin": "^0.0.1-beta.8",
+    "@grafoo/babel-plugin": "^1.0.6",
     "babel-plugin-emotion": "^9.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -16,10 +16,10 @@
     "parcel-bundler": "^1.9.3"
   },
   "dependencies": {
-    "@grafoo/core": "^0.0.1-beta.8",
-    "@grafoo/preact": "^0.0.1-beta.8",
+    "@grafoo/core": "^1.0.6",
+    "@grafoo/preact": "^1.0.6",
     "emotion": "^9.1.0",
-    "preact": "^8.2.7",
+    "preact": "^8.3.0",
     "preact-emotion": "^9.1.0"
   }
 }

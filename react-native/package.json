@@ -1,11 +1,6 @@
 {
   "name": "grafoo-native",
   "private": true,
-  "devDependencies": {
-    "jest-expo": "~27.0.0",
-    "react-native-scripts": "1.14.0",
-    "react-test-renderer": "16.3.1"
-  },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "start": "react-native-scripts start",
@@ -17,10 +12,15 @@
   "jest": {
     "preset": "jest-expo"
   },
+  "devDependencies": {
+    "@grafoo/babel-plugin": "^1.0.6",
+    "jest-expo": "~27.0.0",
+    "react-native-scripts": "1.14.0",
+    "react-test-renderer": "16.3.1"
+  },
   "dependencies": {
-    "@grafoo/babel-plugin": "^0.0.1-beta.15",
-    "@grafoo/core": "^0.0.1-beta.15",
-    "@grafoo/react": "^0.0.1-beta.15",
+    "@grafoo/core": "^1.0.6",
+    "@grafoo/react": "^1.0.6",
     "expo": "^27.0.1",
     "react": "16.3.1",
     "react-native": "~0.55.2"

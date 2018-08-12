@@ -142,36 +142,36 @@
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-0.7.3.tgz#4240c5eee8af86843452af7497ac2808be04a77d"
 
-"@grafoo/babel-plugin@^0.0.1-beta.8":
-  version "0.0.1-beta.15"
-  resolved "https://registry.yarnpkg.com/@grafoo/babel-plugin/-/babel-plugin-0.0.1-beta.15.tgz#b56f3d5941f3c18add60f3672466896ba22cdeb0"
+"@grafoo/babel-plugin@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@grafoo/babel-plugin/-/babel-plugin-1.0.6.tgz#b7612e82e4f035f3f06f0aab5c067f0a3285c583"
   dependencies:
     babel-literal-to-ast "^2.0.0"
     graphql "^0.13.1"
     graphql-query-compress "^1.0.0"
 
-"@grafoo/bindings@^0.0.1-beta.15":
-  version "0.0.1-beta.15"
-  resolved "https://registry.yarnpkg.com/@grafoo/bindings/-/bindings-0.0.1-beta.15.tgz#bea0e97c5541eb41b926b61fd35bbe6be209aad7"
+"@grafoo/bindings@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@grafoo/bindings/-/bindings-1.0.6.tgz#48e9eb00e35a0e686e45c8e32f377f2b91862cd3"
   dependencies:
-    "@grafoo/types" "^0.0.1-beta.15"
+    "@grafoo/types" "^1.0.6"
 
-"@grafoo/core@^0.0.1-beta.8":
-  version "0.0.1-beta.15"
-  resolved "https://registry.yarnpkg.com/@grafoo/core/-/core-0.0.1-beta.15.tgz#b9eb94b5153edfee16d00326d90ed34e2ba8a757"
+"@grafoo/core@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@grafoo/core/-/core-1.0.6.tgz#e90740c2a410f8eafe87e23e0f4b11ecffabcb36"
   dependencies:
-    "@grafoo/types" "^0.0.1-beta.15"
+    "@grafoo/types" "^1.0.6"
 
-"@grafoo/preact@^0.0.1-beta.8":
-  version "0.0.1-beta.15"
-  resolved "https://registry.yarnpkg.com/@grafoo/preact/-/preact-0.0.1-beta.15.tgz#3f61a11b09c255f976a6bc5341b9c7418907cdee"
+"@grafoo/preact@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@grafoo/preact/-/preact-1.0.6.tgz#12911061b9a37095dbe91bd8defa044d54ef5565"
   dependencies:
-    "@grafoo/bindings" "^0.0.1-beta.15"
-    "@grafoo/types" "^0.0.1-beta.15"
+    "@grafoo/bindings" "^1.0.6"
+    "@grafoo/types" "^1.0.6"
 
-"@grafoo/types@^0.0.1-beta.15":
-  version "0.0.1-beta.15"
-  resolved "https://registry.yarnpkg.com/@grafoo/types/-/types-0.0.1-beta.15.tgz#952c10a5e515bb83dee874d3327defa90e0e8e76"
+"@grafoo/types@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@grafoo/types/-/types-1.0.6.tgz#cfa7f0dc583a201e914170d60a2c98bcb3180425"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -3926,9 +3926,9 @@ preact-emotion@^9.1.0:
     babel-plugin-emotion "^9.2.6"
     create-emotion-styled "^9.2.6"
 
-preact@^8.2.7:
-  version "8.2.9"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-8.2.9.tgz#813ba9dd45e5d97c5ea0d6c86d375b3be711cc40"
+preact@^8.3.0:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-8.3.0.tgz#eef16418bc351a44015b62c447722132ce5c36eb"
 
 prelude-ls@~1.1.2:
   version "1.1.2"

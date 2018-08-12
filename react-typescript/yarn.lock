@@ -142,36 +142,36 @@
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-0.7.3.tgz#4240c5eee8af86843452af7497ac2808be04a77d"
 
-"@grafoo/babel-plugin@^0.0.1-beta.8":
-  version "0.0.1-beta.15"
-  resolved "https://registry.yarnpkg.com/@grafoo/babel-plugin/-/babel-plugin-0.0.1-beta.15.tgz#b56f3d5941f3c18add60f3672466896ba22cdeb0"
+"@grafoo/babel-plugin@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@grafoo/babel-plugin/-/babel-plugin-1.0.6.tgz#b7612e82e4f035f3f06f0aab5c067f0a3285c583"
   dependencies:
     babel-literal-to-ast "^2.0.0"
     graphql "^0.13.1"
     graphql-query-compress "^1.0.0"
 
-"@grafoo/bindings@^0.0.1-beta.15":
-  version "0.0.1-beta.15"
-  resolved "https://registry.yarnpkg.com/@grafoo/bindings/-/bindings-0.0.1-beta.15.tgz#bea0e97c5541eb41b926b61fd35bbe6be209aad7"
+"@grafoo/bindings@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@grafoo/bindings/-/bindings-1.0.6.tgz#48e9eb00e35a0e686e45c8e32f377f2b91862cd3"
   dependencies:
-    "@grafoo/types" "^0.0.1-beta.15"
+    "@grafoo/types" "^1.0.6"
 
-"@grafoo/core@^0.0.1-beta.8":
-  version "0.0.1-beta.15"
-  resolved "https://registry.yarnpkg.com/@grafoo/core/-/core-0.0.1-beta.15.tgz#b9eb94b5153edfee16d00326d90ed34e2ba8a757"
+"@grafoo/core@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@grafoo/core/-/core-1.0.6.tgz#e90740c2a410f8eafe87e23e0f4b11ecffabcb36"
   dependencies:
-    "@grafoo/types" "^0.0.1-beta.15"
+    "@grafoo/types" "^1.0.6"
 
-"@grafoo/react@^0.0.1-beta.8":
-  version "0.0.1-beta.15"
-  resolved "https://registry.yarnpkg.com/@grafoo/react/-/react-0.0.1-beta.15.tgz#21831ad9a2d975f89b8a42e9b0b94b2418993697"
+"@grafoo/react@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@grafoo/react/-/react-1.0.6.tgz#aaa40e89653b0aabc4d39729cb8bce8fbd1ebc1d"
   dependencies:
-    "@grafoo/bindings" "^0.0.1-beta.15"
-    "@grafoo/types" "^0.0.1-beta.15"
+    "@grafoo/bindings" "^1.0.6"
+    "@grafoo/types" "^1.0.6"
 
-"@grafoo/types@^0.0.1-beta.15", "@grafoo/types@^0.0.1-beta.8":
-  version "0.0.1-beta.15"
-  resolved "https://registry.yarnpkg.com/@grafoo/types/-/types-0.0.1-beta.15.tgz#952c10a5e515bb83dee874d3327defa90e0e8e76"
+"@grafoo/types@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@grafoo/types/-/types-1.0.6.tgz#cfa7f0dc583a201e914170d60a2c98bcb3180425"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -184,25 +184,28 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.0.tgz#50c1e2260ac0ed9439a181de3725a0168d59c48a"
 
-"@types/node@*":
-  version "10.5.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.5.1.tgz#d578446f4abff5c0b49ade9b4e5274f6badaadfc"
+"@types/node@*", "@types/node@^10.3.3":
+  version "10.5.8"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.5.8.tgz#6f14ccecad1d19332f063a6a764f8907801fece0"
 
-"@types/node@^10.3.3":
-  version "10.5.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.5.2.tgz#f19f05314d5421fe37e74153254201a7bf00a707"
+"@types/prop-types@*":
+  version "15.5.5"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.5.tgz#17038dd322c2325f5da650a94d5f9974943625e3"
+  dependencies:
+    "@types/react" "*"
 
 "@types/react-dom@^16.0.6":
-  version "16.0.6"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.6.tgz#f1a65a4e7be8ed5d123f8b3b9eacc913e35a1a3c"
+  version "16.0.7"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.7.tgz#54d0f867a76b90597e8432030d297982f25c20ba"
   dependencies:
     "@types/node" "*"
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^16.3.18":
-  version "16.4.6"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.4.6.tgz#5024957c6bcef4f02823accf5974faba2e54fada"
+  version "16.4.9"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.4.9.tgz#98b4dba5a0419dbd594f5dbbb2479e1e153431bb"
   dependencies:
+    "@types/prop-types" "*"
     csstype "^2.2.0"
 
 "@types/webpack-env@^1.13.6":
@@ -1581,7 +1584,11 @@ csso@~2.3.1:
     clap "^1.0.9"
     source-map "^0.5.3"
 
-csstype@^2.2.0, csstype@^2.5.2:
+csstype@^2.2.0:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.5.6.tgz#2ae1db2319642d8b80a668d2d025c6196071e788"
+
+csstype@^2.5.2:
   version "2.5.5"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.5.5.tgz#4125484a3d42189a863943f23b9e4b80fedfa106"
 
@@ -2629,17 +2636,11 @@ log-symbols@^2.2.0:
   dependencies:
     chalk "^2.0.1"
 
-loose-envify@^1.0.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
-
-loose-envify@^1.1.0, loose-envify@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.3.1.tgz#d1a8ad33fa9ce0e713d65fdd0ac8b748d478c848"
-  dependencies:
-    js-tokens "^3.0.0"
 
 lru-cache@^3.2.0:
   version "3.2.0"
@@ -3768,8 +3769,8 @@ rc@^1.2.7:
     strip-json-comments "~2.0.1"
 
 react-dom@^16.4.0:
-  version "16.4.1"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.1.tgz#7f8b0223b3a5fbe205116c56deb85de32685dad6"
+  version "16.4.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.4.2.tgz#4afed569689f2c561d2b8da0b819669c38a0bda4"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -3784,8 +3785,8 @@ react-emotion@^9.1.3:
     create-emotion-styled "^9.2.6"
 
 react@^16.4.0:
-  version "16.4.1"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.4.1.tgz#de51ba5764b5dbcd1f9079037b862bd26b82fe32"
+  version "16.4.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.4.2.tgz#2cd90154e3a9d9dd8da2991149fdca3c260e129f"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"

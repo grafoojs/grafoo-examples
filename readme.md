@@ -1,4 +1,4 @@
-# Grafoo exmaples
+# Grafoo examples
 
 This is a repository for [Grafoo](https://github.com/grafoojs/grafoo) example applications.
 

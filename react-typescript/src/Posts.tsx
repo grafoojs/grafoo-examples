@@ -23,9 +23,7 @@ const mutations: GrafooMutations<queries.AllPosts, Mutations> = {
   updatePost: {
     query: queries.UPDATE_POST,
     optimisticUpdate: ({ allPosts }, variables: queries.Post) => ({
-      allPosts: allPosts.map(
-        p => (p.id === variables.id ? { ...p, ...variables } : p)
-      )
+      allPosts: allPosts.map(p => (p.id === variables.id ? { ...p, ...variables } : p))
     })
   },
   deletePost: {
@@ -72,14 +70,8 @@ export default class Posts extends React.Component<{}, State> {
           <React.Fragment>
             <ui.Wrapper>
               <ui.H1>Post Form</ui.H1>
-              <ui.Form
-                onSubmit={this.submit(id ? props.updatePost : props.createPost)}
-              >
-                <ui.Input
-                  placeholder="title"
-                  value={title}
-                  onChange={this.handleChange("title")}
-                />
+              <ui.Form onSubmit={this.submit(id ? props.updatePost : props.createPost)}>
+                <ui.Input placeholder="title" value={title} onChange={this.handleChange("title")} />
                 <ui.Textarea
                   placeholder="content"
                   value={content}
@@ -94,17 +86,11 @@ export default class Posts extends React.Component<{}, State> {
                   <ui.Item key={id}>
                     <ui.Wrapper>
                       <ui.H2>{title}</ui.H2>
-                      <ui.PostContent
-                        dangerouslySetInnerHTML={{ __html: content }}
-                      />
-                      <ui.Button
-                        onClick={() => this.setState({ id, title, content })}
-                      >
+                      <ui.PostContent dangerouslySetInnerHTML={{ __html: content }} />
+                      <ui.Button onClick={() => this.setState({ id, title, content })}>
                         update post
                       </ui.Button>{" "}
-                      <ui.Button onClick={() => props.deletePost({ id })}>
-                        remove post
-                      </ui.Button>
+                      <ui.Button onClick={() => props.deletePost({ id })}>remove post</ui.Button>
                     </ui.Wrapper>
                   </ui.Item>
                 ))}

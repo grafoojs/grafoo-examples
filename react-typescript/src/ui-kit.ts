@@ -97,7 +97,6 @@ export const Center = styled.div`
   flex-direction: column;
 `;
 
-
 export const PostContent = styled.div`
   margin-bottom: 10px;
 `;

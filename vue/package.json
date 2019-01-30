@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.2.0",
+    "@grafoo/babel-plugin": "^1.2.1",
+    "@grafoo/types": "^1.2.1",
+    "@types/node": "^10.12.12",
+    "@types/vue": "^2.0.0",
+    "@types/webpack-env": "^1.13.6",
+    "@vue/component-compiler-utils": "^2.3.0",
+    "parcel-bundler": "^1.10.3",
+    "typescript": "^3.2.1",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "dependencies": {
+    "@babel/core": "^7.2.0",
+    "@grafoo/bindings": "^1.2.1",
+    "@grafoo/core": "^1.2.1",
+    "vue": "^2.5.17",
+    "vue-hot-reload-api": "^2.3.1"
+  }
+}
